@@ -1,0 +1,35 @@
+apply plugin: 'war'
+apply plugin: 'com.moowork.node'
+repositories {
+  mavenCentral()
+}
+
+buildscript{
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+    mavenCentral()
+  }
+  dependencies {
+    classpath "com.moowork.gradle:gradle-node-plugin:1.3.1"
+  }
+}
+
+task ng(type: NpmTask) {
+  group = 'Node'
+  description = 'angular'
+  args = ['run', 'build']
+}
+
+task ui(type: War) {
+  from ("${projectDir}/dist/UI") {
+    into("/")
+  }
+
+  baseName = "ui"
+  destinationDir = file("${buildDir}/libs")
+}
+
+build.dependsOn(ui)
+ui.dependsOn(ng)

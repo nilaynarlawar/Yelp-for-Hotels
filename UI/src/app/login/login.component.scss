@@ -1,0 +1,46 @@
+#jumbotrn{
+  margin-top: 30px;
+  text-align: center;
+  background: none;
+  font-style: italic;
+  color: darkslategray;
+  margin-bottom: 0px;
+}
+
+.panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.card-login {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1)
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  background: black;
+}
+.input{
+  font-size: 80%;
+  border-radius: 2rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+}

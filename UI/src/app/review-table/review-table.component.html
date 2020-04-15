@@ -1,0 +1,85 @@
+<div class="row" *ngFor="let review of reviews | paginate: { itemsPerPage: 10, currentPage: p };">
+  <div class="col-md-12  mt-2">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="bg-teal">
+        <mat-panel-title class="text-white" *ngIf="isMyReview">
+          {{review.hotelName}}
+        </mat-panel-title>
+        <mat-panel-description class="text-white">
+          <table class="w-100">
+            <div class="row">
+              <div class="col col-md-9">
+                <span class="font-weight-bold">Review Title:</span>  {{review.title ? review.title : 'Title not specified'}}
+              </div>
+              <div class="col col-md-3">
+                Rating:{{review.ratingOverall}}/5
+              </div>
+            </div>
+
+          </table>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <table class="w-100 mt-2">
+        <div class="row">
+          <div class="col col-md-2">
+            <label class="font-weight-bold">Review Title:</label>
+          </div>
+          <div class="col col-md-2">
+            <textarea class="input form-control form-rounded"
+                      [attr.disabled]="isMyReview ? null : 'disabled'"
+                      id="ReviewTitle_{{review.id}}">{{review.title}}</textarea>
+          </div>
+          <div class="col col-md-2">
+            <label class="font-weight-bold">Rating(on Scale of 5):</label>
+          </div>
+          <div class="col col-md-1">
+            <input type="text" class="input form-control form-rounded" value= {{review.ratingOverall}}
+                   [attr.disabled]="isMyReview ? null : 'disabled'"
+            id="Rating_{{review.id}}">
+          </div>
+          <div class="col col-md-2">
+            <label class="font-weight-bold">Review Date:</label>
+          </div>
+          <div class="col col-md-3">
+            <input type="text" class="input form-control form-rounded" value={{review.reviewSubmissionTime}} disabled>
+          </div>
+          <div class="col col-1"> </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-12">
+            <label class="font-weight-bold">Review Description:</label>
+            <textarea class="input form-control form-rounded" id="ReviewText_{{review.id}}"
+                      [attr.disabled]="isMyReview ? null : 'disabled'">{{review.reviewText}}</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-2">
+            <button class="btn btn-primary mt-3" *ngIf="isMyReview" (click)="saveReview(review.id)">Save Review</button>
+          </div>
+          <div class="col col-md-2">
+            <button class="btn btn-primary mt-3" *ngIf="isMyReview" (click)="deleteReview(review.id)">Delete Review</button>
+          </div>
+        </div>
+       <div class="row">
+         <div class="col col-md-6">
+             <button type="button" class="btn btn-sm btn-info mt-2" (click)="Liked(review.id)"
+                     *ngIf="!isMyReview && !isAlreadyLikedByUser(review.id)">
+               {{likeBtnText}}
+             </button>
+           <button type="button" class="btn btn-sm btn-info mt-2" (click)="Unlike(review.id)"
+                   *ngIf="!isMyReview && isAlreadyLikedByUser(review.id)">
+             Unlike
+           </button>
+         </div>
+       </div>
+        <div class="row" *ngIf="!isMyReview">
+            <div class="col col-md-12 text-success font-weight-bold font-italic">{{review.likedCount}} users found this review helpful.
+            </div>
+        </div>
+      </table>
+    </mat-expansion-panel>
+  </div>
+</div>
+<pagination-controls class="float-right mt-4" (pageChange)="p = $event"></pagination-controls>
+

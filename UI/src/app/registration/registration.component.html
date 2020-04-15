@@ -1,0 +1,112 @@
+
+<div>
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-md-8">
+      <div class="card bg-light card-reg ml-lg-5 mt-10" style="max-width: 20rem; margin-top: 80px">
+        <div class="card-body mt-3">
+          <form [formGroup]="regForm">
+            <h5 class="card-title text-center">Account Details</h5>
+            <div class="form-group input-group">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group has-insideicon">
+                    <input type="text" class="form-control" placeholder="Full Name" id="userName"
+                           formControlName="userName" name="userName" required>
+                    <div *ngIf="frmCntrl.userName.invalid && (frmCntrl.userName.dirty || frmCntrl.userName.touched)"
+                         class="alert alert-danger">
+                      Username is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group has-insideicon">
+                    <input type="text" class="form-control" placeholder="Email Id"
+                           formControlName="emailId" name="emailId" id="emailId">
+                    <div *ngIf="frmCntrl.emailId.invalid && (frmCntrl.emailId.dirty || frmCntrl.emailId.touched)"
+                         class="alert alert-danger">
+                      Email address is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group has-insideicon">
+                    <input type="password" class="form-control" placeholder="password"
+                           formControlName="password" name="password" id="password">
+                    <div *ngIf="frmCntrl.password.invalid && (frmCntrl.password.dirty || frmCntrl.password.touched)"
+                         class="alert alert-danger">
+                      Password is not strong.
+                      It should be:
+                      1] length of 5 to 10 char.2] at least one number.
+                      3] at least one letter. 4] one special char.
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group has-insideicon">
+                    <input type="text" class="form-control" placeholder="Address"
+                           formControlName="address" id="address" name="address">
+                    <div *ngIf="frmCntrl.address.invalid && (frmCntrl.address.dirty || frmCntrl.address.touched)"
+                         class="alert alert-danger">
+                      Address is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group has-insideicon">
+                    <input type="text" class="form-control" placeholder="City"
+                           formControlName="city" id="city" name="city">
+                    <div *ngIf="frmCntrl.city.invalid && (frmCntrl.city.dirty || frmCntrl.city.touched)"
+                         class="alert alert-danger">
+                      City name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group has-insideicon">
+                    <input type="text" class="form-control" placeholder="Zip Code"
+                           formControlName="zipCode" id="zipCode" name="zipCode">
+                    <div *ngIf="frmCntrl.zipCode.invalid && (frmCntrl.zipCode.dirty || frmCntrl.zipCode.touched)"
+                         class="alert alert-danger">
+                      Zip code is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group has-insideicon">
+                    <input type="text" class="form-control" placeholder="Country"
+                           formControlName="country" name="country" id="country">
+                    <div *ngIf="frmCntrl.country.invalid && (frmCntrl.country.dirty || frmCntrl.country.touched)"
+                         class="alert alert-danger">
+                      Country name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-lg btn-block text-uppercase text-white" (click)="registerUser()">
+                Create Account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

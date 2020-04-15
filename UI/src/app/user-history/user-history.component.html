@@ -1,0 +1,53 @@
+<div class="card marginCls">
+  <div class="card-header text-light bg-dark">
+    Pages Visited and Saved Hotels(History)
+  </div>
+  <div class="card-body">
+    <h6 class="card-title font-italic text-success">Here is the list of pages you visited and hotels saved.</h6>
+    <div class="row">
+      <div class="col-md-12">
+          <button class="btn btn-primary mt-3" (click)="clearExpediaHistory()">Clear Expedia History</button>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table mt-2">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">Expedia Links Visited</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let history of userExpediaHistory">
+            <td><button (click) = "goToLink(history.expediaLink)" class="btn btn-link"> {{history.hotelName}}
+            </button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary mt-3" (click)="clearHotelHistory()">Clear Saved Hotel History</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table mt-2">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">Saved Hotels</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let history of userSavedHotelHistory">
+            <td><button class="btn btn-link"> {{history.hotelName}}
+            </button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

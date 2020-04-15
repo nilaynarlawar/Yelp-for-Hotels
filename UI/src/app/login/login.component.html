@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="jumbotron" id="jumbotrn">
+    <h1> Welcome To TravelHelper</h1>
+    <h2>A Hotel Review Website</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col m-sm-4">
+        <div class="card bg-light card-login mb-6" style="max-width: 20rem;">
+          <div class="card-body">
+            <form [formGroup]="loginForm">
+            <h5 class="card-title text-center">Sign In</h5>
+            <div class="form-label-group">
+              <input type="email" id="userName" class="input form-control form-rounded" placeholder="Email address"
+                     formControlName="userName" name="userName" required>
+              <div *ngIf="frmCntrl.userName.invalid && (frmCntrl.userName.dirty || frmCntrl.userName.touched)"
+                   class="alert alert-danger">
+                Username is required.
+              </div>
+            </div>
+            <div class="form-label-group">
+              <input type="password" id="password"  formControlName="password" name="password" class="input form-control
+              form-rounded"  placeholder="Password">
+              <div *ngIf="frmCntrl.password.invalid && (frmCntrl.password.dirty || frmCntrl.password.touched)"
+                   class="alert alert-danger">
+                password is required.
+              </div>
+            </div>
+
+            <button class="btn btn-lg btn-block text-uppercase text-white" (click)="login()">
+              Sign in
+            </button>
+            <hr class="my-4">
+            <button class="btn btn-lg btn-block text-uppercase text-white" (click)="registrationPage()">
+              Create Account
+            </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>

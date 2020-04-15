@@ -1,0 +1,9 @@
+{
+  "/hotelapp": {
+    "target": "http://localhost:8090/hotelapp/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/hotelapp": ""}
+  }
+}

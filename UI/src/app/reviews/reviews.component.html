@@ -1,0 +1,40 @@
+<div class="card marginCls">
+  <div class="card-header text-light bg-dark" *ngIf="isMyReview">
+    My Reviews
+  </div>
+  <div class="card-header text-light bg-dark" *ngIf="!isMyReview">
+  Hotel Reviews
+  </div>
+  <div class="card-body">
+    <h6 class="card-title font-italic text-success" *ngIf="isMyReview">You can filter reviews by Hotel Name. Select hotel name from the
+      dropdown.</h6>
+    <div class="row">
+      <div class="col col-md-2">
+        <label class="font-weight-bold">Hotel Name: </label>
+      </div>
+      <div class="col col-md-3">
+        <select name="hotelName" class="input form-control form-rounded" *ngIf="isMyReview" [(ngModel)]="selectedHotel">
+          <option *ngFor="let hotel of hotelList" [value]="hotel.key">{{hotel.value}}</option>
+        </select>
+        <label class="font-weight-normal" *ngIf="!isMyReview"> {{hotelName}}</label>
+      </div>
+      <div class="col col-4">
+            <button class="btn btn-primary" *ngIf="isMyReview" (click) = "LoadReview()">Get Reviews</button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <h6 class="card-title font-italic text-black-70">Reviews are:</h6>
+      </div>
+    </div>
+    <div class="row mt-3" *ngIf="isLoading">
+      <div class="col-md-6">
+        <h6 class="card-title text-black-70"> Loading reviews...</h6>
+      </div>
+    </div>
+  <app-review-table [reviewsLikedByUser] = "reviewsLikedByUser" [reviews]="hotelreviews" [isMyReview]="isMyReview"
+                    [totalReviews]="totalReviews" (likeClick)="likeClicked()" (reviewChanged)="reviewUpdated()"></app-review-table>
+  </div>
+</div>
+
+
