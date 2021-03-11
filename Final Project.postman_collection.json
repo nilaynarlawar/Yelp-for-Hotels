@@ -1,0 +1,877 @@
+{
+	"info": {
+		"_postman_id": "f95ebab0-15ea-43a8-9e1a-6215e768f01b",
+		"name": "Final Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Load Hotel Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/loadData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"loadData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get single review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/review/getReview?reviewid=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"review",
+						"getReview"
+					],
+					"query": [
+						{
+							"key": "reviewid",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/review/getReviewList?hotelid=1111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"review",
+						"getReviewList"
+					],
+					"query": [
+						{
+							"key": "hotelid",
+							"value": "1111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get hotel by city and hotel name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/hotel/getHotelInfo?city=San Francisco&hotelname=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"hotel",
+						"getHotelInfo"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "San Francisco"
+						},
+						{
+							"key": "hotelname",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get hotel info by hotel id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/hotel/getHotelInfoById?hotelid=360",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"hotel",
+						"getHotelInfoById"
+					],
+					"query": [
+						{
+							"key": "hotelid",
+							"value": "360"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get User by user Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/getUser?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"getUser"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "a@a.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/validateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"validateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createReview",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reviewId",
+							"value": "test2",
+							"type": "text"
+						},
+						{
+							"key": "hotelId",
+							"value": "1111",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "reviewText",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "reviewPostDate",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "isRecommended",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/review/createReview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"review",
+						"createReview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "zipCode",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "emailId",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "lastLogin",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "isAdmin",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "salt",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "creationTime",
+							"value": "test",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/review/deleteReview?id=test2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"review",
+						"deleteReview"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "test2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reviewId",
+							"value": "test1",
+							"type": "text"
+						},
+						{
+							"key": "hotelId",
+							"value": "1111",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "test11",
+							"type": "text"
+						},
+						{
+							"key": "reviewText",
+							"value": "test11",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "test11",
+							"type": "text"
+						},
+						{
+							"key": "reviewPostDate",
+							"value": "test11",
+							"type": "text"
+						},
+						{
+							"key": "isRecommended",
+							"value": "true11",
+							"type": "text"
+						},
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/review/updateReview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"review",
+						"updateReview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/createSession?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"createSession"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/deleteSession?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"deleteSession"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User History",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/updateUserHistory?userId=1&hotelId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"updateUserHistory"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "hotelId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User History",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/deleteUserHistory?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"deleteUserHistory"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all city names",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/hotel/getHotelCity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"hotel",
+						"getHotelCity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/getHistory?userId=19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"getHistory"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save User Hotel liked",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "hotelId",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/updateSaveHotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"updateSaveHotel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Save User Hotel liked List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "hotelId",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/getSavedHotel?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"getSavedHotel"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER LIKED HOTELS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/user/deleteSaveHotel?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"user",
+						"deleteSaveHotel"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET REVIEW BY USERID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/review/getReviewListByUser?userid=19&hotelName=Parc 55 San Francisco - A Hilton Hotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"review",
+						"getReviewListByUser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "19"
+						},
+						{
+							"key": "hotelName",
+							"value": "Parc 55 San Francisco - A Hilton Hotel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST OF HOTEL BY USER ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/review/getHotelListByUserId?userid=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"review",
+						"getHotelListByUserId"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ATTRACTION",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/hotelapp/hotel/getAttractions?hotelid=360&radius=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hotelapp",
+						"hotel",
+						"getAttractions"
+					],
+					"query": [
+						{
+							"key": "hotelid",
+							"value": "360"
+						},
+						{
+							"key": "radius",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
