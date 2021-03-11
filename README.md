@@ -29,8 +29,8 @@ I have implemented features which are usually developed for Industry standard we
 
 # Postman script
 
-You can find the Postman script [here]()
+You can find the Postman script [here](https://github.com/nilaynarlawar/Yelp-for-Hotels/blob/master/pom.xml)
 
 # Home page
 
-![alt text](http://url/to/img.png)
+![Home page](https://github.com/nilaynarlawar/Yelp-for-Hotels/blob/master/homepage.JPG)
